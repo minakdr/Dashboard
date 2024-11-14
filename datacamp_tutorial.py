@@ -58,6 +58,16 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
         }
     }
 ),
+
+  dcc.Dropdown(
+        options=[
+            {'label': 'New York City', 'value': 'NYC'},
+            {'label': u'Montréal', 'value': 'MTL'},
+            {'label': 'San Francisco', 'value': 'SF'}
+        ],
+        value='MTL',
+        
+    ),
  dcc.Graph(
         id='life-exp-vs-gdp',
         figure={
@@ -83,6 +93,16 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
                 hovermode='closest'
             )
         }
+    ),
+    html.Label('Multi-Select Dropdown'),
+    dcc.Dropdown(
+        options=[
+            {'label': 'New York City', 'value': 'NYC'},
+            {'label': u'Montréal', 'value': 'MTL'},
+            {'label': 'San Francisco', 'value': 'SF'}
+        ],
+        value=['MTL', 'SF'],
+        multi=True
     )
 
 ])
